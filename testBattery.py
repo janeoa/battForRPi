@@ -1,6 +1,6 @@
 from battery import Battery
 
-batt = Battery
+#batt = Battery
 
 while True:
-    print(batt.getVoltage())
+    print(Battery.getVoltage())
