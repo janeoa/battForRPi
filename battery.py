@@ -8,7 +8,7 @@ class Battery(object):
     _high = 4.2
     _dV = _high-_low
 
-    def getRaw():
+    def getRaw(self):
         raw = serialport.readline()
         return str(raw)
 
@@ -17,7 +17,7 @@ class Battery(object):
         voltage = float(float(raw)*_vcc/1023.0)
         return(voltage)
 
-    def getBattery():
+    def getBattery(self):
         voltage = getVoltage()
         percentage = (voltage-_low)*100.0/_dV
         return percentage
