@@ -3,4 +3,4 @@ from battery import *
 batt = Battery()
 
 while True:
-    print(batt.getVoltage())
+    print(str(batt.getRaw())+'    '+str(batt.getVoltage())+'V '+str(batt.getVoltage())+'%')
