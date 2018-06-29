@@ -1,7 +1,9 @@
 import serial
 
 class Battery(object):    
-    serialport = serial.Serial("/dev/serial0", 9600)
+    
+    def __init__(self):
+        self.serialport = serial.Serial("/dev/serial0", 9600)
 
     _vcc = 5.0
     _low = 3.0
@@ -13,7 +15,7 @@ class Battery(object):
         return str(raw)
 
     def getVoltage(self):
-        raw  = serialport.readline()
+        raw  = self.serialport.readline()
         voltage = float(float(raw)*_vcc/1023.0)
         return(voltage)
 
