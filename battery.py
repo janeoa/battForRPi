@@ -14,7 +14,7 @@ class Battery(object):
         self._vcc = vcc
         self._low = low
         self._high = high
-        self._dV = self._high-self._low
+        self._dV = high-low
 
     def getRaw(self):
         raw = self.serialport.readline()
