@@ -12,7 +12,7 @@ class Battery:
         raw = serialport.readline()
         return str(raw)
 
-    def getVoltage():
+    def getVoltage(self):
         raw  = serialport.readline()
         voltage = float(float(raw)*_vcc/1023.0)
         return(voltage)
