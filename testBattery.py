@@ -3,4 +3,4 @@ from battery import *
 batt = Battery()
 
 while True:
-    print(str(batt.getRaw())+'    '+str(batt.getVoltage())+'V '+str(batt.getVoltage())+'%')
+    toOut = "{} {}V {}%".format(batt.getRaw,batt.getVoltage,batt.getBattery)
