@@ -1,12 +1,19 @@
 import serial
 
-class Battery(object):    
-    
+class Battery(object):
+
     def __init__(self):
         self.serialport = serial.Serial("/dev/serial0", 9600)
         self._vcc = 5.0
-        self._low = 3.0
+        self._low = 3.7
         self._high = 4.2
+        self._dV = self._high-self._low
+
+    def setBattery(self, low, high, vcc):
+        self.serialport = serial.Serial("/dev/serial0", 9600)
+        self._vcc = vcc
+        self._low = low
+        self._high = high
         self._dV = self._high-self._low
 
     def getRaw(self):
