@@ -11,9 +11,9 @@ class Battery(object):
 
     def setBattery(self, low, high, vcc):
         self.serialport = serial.Serial("/dev/serial0", 9600)
-        self._vcc = vcc
-        self._low = low
-        self._high = high
+        self._vcc = float(vcc)
+        self._low = float(low)
+        self._high = float(high)
         self._dV = float(high)-float(low)
 
     def getRaw(self):
