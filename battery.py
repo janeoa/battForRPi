@@ -11,7 +11,7 @@ class Battery(object):
 
     def getRaw(self):
         raw = self.serialport.readline()
-        return int(raw)
+        return int(str(raw))
 
     def getVoltage(self):
         raw  = self.serialport.readline()
