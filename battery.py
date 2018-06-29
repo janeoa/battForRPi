@@ -1,5 +1,6 @@
-class Battery:
-    import serial
+import serial
+
+class Battery:    
     serialport = serial.Serial("/dev/serial0", 9600)
 
     _vcc = 5.0
